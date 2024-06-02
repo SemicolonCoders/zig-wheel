@@ -25,36 +25,41 @@ User Engagement: Provides users with detailed and relevant information about eac
 
 # Main pages of the project:
 
-![HomePageZigwheelsd]
+![Home](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/2a98541a-f46c-432e-a3d5-490bbefbaf67)
 
 
 #  All products 
 
-![Alld]
-![Carsd]
-![Bikesd]
-![Scootyd]
+![all](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/7cc375fc-680e-4bf9-a99b-d44da60dca2d)
+![bike](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/30be942b-558b-4645-9bbd-225dea5dddb3)
+![scooty](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/ab533389-bc46-4655-b620-d022caa0e05f)
+
+![cars](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/509a3b93-ca30-4e3c-9559-770abdb952ad)
 
 
 #  Gallery 
-
-![Galleryd]
+![zig3](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/b158a7fd-8b8d-4965-a91c-4528f6cb12de)
 
 #  About Us
 
-![AboutUsd]
+![zig2](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/cff0861a-45fc-4e1f-a3b1-b0d908abb3ba)
+
 
 #  Login
 
-![loginD]
+![log in](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/accf27a1-72d1-49ae-8526-cac8d7eb0361)
+
 
 #  Signup
 
-![loginD]
+![signup](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/d086adb2-819a-4d92-9b51-b3d2ad808c6c)
+
 
 #  Cart
 
-![Cartd]
+![cart](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/c3c3c952-9f4d-42ed-aadd-51d9ed2b7ae1)
+![cart2](https://github.com/SemicolonCoders/zig-wheel/assets/138607997/8a1bd9c4-519a-4320-b421-569afb988c74)
+
 
 # Responsive Design
 # Mobile-Friendly Layout:
@@ -90,12 +95,6 @@ Efficient Styling: Quick and consistent styling with predefined utility classes,
 The Zig Wheel clone website is a well-rounded project that demonstrates the effective use of modern web technologies like React, Tailwind CSS, and Vite. It offers a feature-rich and user-friendly experience, from dynamic product listings and detailed information to responsive design and seamless search functionality. This project serves as a comprehensive example of how to build a performant and visually appealing web application.
 
 
-
-
-
-
-
-
 ## 🔧 `Project Clonning and Running`
 - To run this project locally, use the following command in your CLI:
 - 1. Clone this repository:
@@ -121,13 +120,12 @@ npm run dev
 
 **Link to ZigWheels video**: 
 
-**Web Deployed Link**:
+**Web Deployed Link**:https://zig-wheel-pragati-srivastavas-projects.vercel.app/
 
 **Github repo Link**:
 
 ## 🎋 `Individual project`
-This project is created by Me.
-- [@Pragati Srivastava]
+This project is created by Me.- [@Pragati Srivastava]
 
 ##  📚`Feedback`
 
