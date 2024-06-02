@@ -97,10 +97,10 @@ The Zig Wheel clone website is a well-rounded project that demonstrates the effe
 
 ## 🔧 `Project Clonning and Running`
 - To run this project locally, use the following command in your CLI:
-- 1. Clone this repository:
+- 1. Clone this repository:"https://github.com/SemicolonCoders/zig-wheel.git"
 
 ```bash :
-
+https://github.com/SemicolonCoders/zig-wheel.git
 ``` 
 
 2. Install dependencies:
@@ -122,7 +122,7 @@ npm run dev
 
 **Web Deployed Link**:https://zig-wheel-pragati-srivastavas-projects.vercel.app/
 
-**Github repo Link**:
+**Github repo Link**:https://github.com/SemicolonCoders/zig-wheel.git
 
 ## 🎋 `Individual project`
 This project is created by Me.- [@Pragati Srivastava]
