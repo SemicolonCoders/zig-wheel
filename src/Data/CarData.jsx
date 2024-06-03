@@ -1,3 +1,4 @@
+// Export an array of car data objects
 export const fetch_cars_data=[
     {
         id:1,

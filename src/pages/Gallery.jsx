@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
+// Define the Gallery component
 const Gallery = () => {
+
+    // State variables to manage products, loading state, and error
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+    // useEffect hook to fetch products from API
   useEffect(() => {
+
+     // Function to fetch products asynchronously
     const fetchProducts = async () => {
       try {
+
+          // Fetch products data from the API
         const response = await fetch('https://car-data.p.rapidapi.com/cars', {
           method: 'GET',
           headers: {
@@ -16,14 +25,16 @@ const Gallery = () => {
           }
         });
 
+         // Check if response is not OK
         if (!response.ok) {
           throw new Error(`${response.status}: ${response.statusText}`);
         }
 
+
+        // Convert response data to JSON
         const data = await response.json();
-        // Assuming the API returns an array of products
-        // Each product object should include 'make', 'model', 'year', 'type', 'fuel_type', and 'image' properties
-        // I'll add 'image' property to the existing products
+      
+         // Placeholder images for products
         const placeholderImages = [
           "https://th.bing.com/th/id/OIP.2theWd_f_geuAarMt4KaoAAAAA?rs=1&pid=ImgDetMain",
           "https://www.carscoops.com/wp-content/uploads/2020/01/Mini-Convertible-Sidewalk-1-1.jpg",
@@ -37,26 +48,39 @@ const Gallery = () => {
           "https://th.bing.com/th/id/OIP.uqSQP3tKuz-CZY8LhqPQdQHaE8?rs=1&pid=ImgDetMain"
         ];
 
+        // Map products data to add image property using placeholder images
         const productsWithImages = data.map((product, index) => ({
           ...product,
           image: placeholderImages[index % placeholderImages.length]
         }));
 
+          // Update products state with products containing images
         setProducts(productsWithImages);
       } catch (error) {
+         // Handle error by setting error state
         setError(error.message);
       } finally {
+
+         // Set loading state to false once data fetching is complete
         setLoading(false);
       }
     };
 
+        // Call fetchProducts function
     fetchProducts();
   }, []); // Empty dependency array means this effect runs once after the initial render
 
+
+    // If loading, display loading message
   if (loading) return <p>Loading...</p>;
+
+  // If error, display error message
+
   if (error) return <p>Error: {error}</p>;
   console.log(products);
 
+
+  // Render products if products exist
   return (
     <div className='px-[50px]'>
       <h1 className="text-3xl font-bold mb-4">Products</h1>

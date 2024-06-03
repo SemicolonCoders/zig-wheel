@@ -1,4 +1,5 @@
- export const fetch_bike_data=[
+// Export an array of bike data objects
+export const fetch_bike_data=[
 {
     id:1,
     model:'Passion-Pro',

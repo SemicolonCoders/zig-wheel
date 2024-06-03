@@ -1,5 +1,6 @@
+// Define the Footer component
 import React from 'react'
-
+  // Footer section
 const Footer = () => {
   return (
    <footer class="bg-white dark:bg-gray-900">

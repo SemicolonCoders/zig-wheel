@@ -1,14 +1,13 @@
 // Importing React and the bike data
 import React from 'react';
 import { fetch_bike_data } from '../Data/BikeData';
-
 const Bikes = () => {
   return (
     <div className="flex flex-wrap gap-5 p-5">
       {fetch_bike_data.map((bike) => (
         <div
           key={bike.id}
-          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6 m-6"
+          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6"
         >
           <img
             className="w-full h-48 object-cover rounded-t-lg"

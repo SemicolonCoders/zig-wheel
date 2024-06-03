@@ -1,3 +1,4 @@
+// Export an array of scooty data objects
 export const fetch_scooty_data=[
 {
     id:1,

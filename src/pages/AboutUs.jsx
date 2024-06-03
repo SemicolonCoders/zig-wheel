@@ -8,9 +8,15 @@ const AboutUs = () => {
   return (
     <div className="container mx-auto py-10">
       <div className="flex flex-col items-center bg-fuchsia-200 text-white p-8 rounded-lg shadow-lg">
+       
         <h1 className="font-semibold text-2xl text-black mb-4">About Developer</h1>
         <p className="text-pink-950 font-semibold mb-4 text-center">
           Hello! I'm <span className="font-semibold text-white bg-blue-700 rounded-lg px-2">Pragati Srivastava</span>, a dedicated Full Stack Web Developer. I've crafted this website with a passion for detail and a love for creating seamless, user-friendly online stores. My goal is to make your shopping experience not only effortless but also enjoyable. Every element on this site is designed to stand out, providing you with a smooth and delightful journey from browsing to checkout. Welcome, and happy shopping!
+        </p>
+
+        <h1 className="font-semibold text-2xl text-black mb-4">About ZigWheels</h1>
+        <p className="text-pink-950 font-semibold mb-4 text-center">
+        This is an e-commerce application focusing on vehicles, where users can browse, view details, and add different types of vehicles (cars, bikes, and scooties) to a cart. The application uses React for the frontend and has a context-based state management for handling the shopping cart functionality.
         </p>
 
         <h1 className="font-semibold text-2xl text-black mb-4">Frameworks and Technologies Used</h1>

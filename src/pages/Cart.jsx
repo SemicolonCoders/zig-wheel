@@ -2,10 +2,14 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { storeContext } from '../context/storeContext';
 
+// Define the Cart component
 const Cart = () => {
+
+   // Destructure necessary values from storeContext
   const { cartItems, setCartItems, removeFromCart } = useContext(storeContext);
   const navigate = useNavigate(); // Initialize useNavigate
 
+    // Function to increase quantity of an item in the cart
   const increaseQuantity = (id) => {
     const updatedCartItems = cartItems.map(item =>
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -13,22 +17,29 @@ const Cart = () => {
     setCartItems(updatedCartItems);
   };
 
+    // Function to decrease quantity of an item in the cart
   const decreaseQuantity = (id) => {
+      // Update cartItems with decreased quantity
     const updatedCartItems = cartItems.map(item =>
       item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
     );
-    setCartItems(updatedCartItems);
+    setCartItems(updatedCartItems);//Update cartItems state
   };
 
+
+  // Function to calculate total price of items in the cart
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
+
+  // Function to handle checkout process
   const handleCheckout = () => {
     // Navigate to the home page
     navigate('/');
   };
 
+    // JSX structure to render the Cart component
   return (
     <div className="container mx-auto mt-10 flex-center">
       <div className="mb-20">

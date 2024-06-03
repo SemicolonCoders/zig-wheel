@@ -1,18 +1,19 @@
-import React, { useContext, useState } from 'react';
-import { fetch_cars_data } from '../Data/CarData';
-import { fetch_bike_data } from '../Data/BikeData';
-import { fetch_scooty_data } from '../Data/ScootyData';
-import { storeContext } from '../context/storeContext';
+import React, { useContext, useState } from 'react'; // Importing necessary hooks and libraries
+import { fetch_cars_data } from '../Data/CarData'; // Importing car data
+import { fetch_bike_data } from '../Data/BikeData'; // Importing bike data
+import { fetch_scooty_data } from '../Data/ScootyData'; // Importing scooty data
+import { storeContext } from '../context/storeContext'; // Importing store context
 
 const All = () => {
-  const { addToCart } = useContext(storeContext);
-  const [productQuantity, setProductQuantity] = useState({});
+  const { addToCart } = useContext(storeContext); // Using the store context to get the addToCart function
+  const [productQuantity, setProductQuantity] = useState({}); // State to track quantity of products added to cart
 
+  // Function to handle adding a product to the cart
   const handleAddToCart = (product) => {
-    addToCart(product);
+    addToCart(product); // Add product to cart using context function
     setProductQuantity(prevQuantity => ({
       ...prevQuantity,
-      [product.id]: (prevQuantity[product.id] || 0) + 1
+      [product.id]: (prevQuantity[product.id] || 0) + 1 // Update the quantity of the product
     }));
   };
 
@@ -22,7 +23,7 @@ const All = () => {
       {fetch_cars_data.map((car) => (
         <div
           key={car.id}
-          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6 m-6"
+          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6"
         >
           <img
             className="w-full h-48 object-cover rounded-t-lg"
@@ -75,7 +76,7 @@ const All = () => {
       {fetch_bike_data.map((bike) => (
         <div
           key={bike.id}
-          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6 m-6"
+          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6"
         >
           <img
             className="w-full h-48 object-cover rounded-t-lg"
@@ -128,7 +129,7 @@ const All = () => {
       {fetch_scooty_data.map((scooty) => (
         <div
           key={scooty.id}
-          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6 m-6"
+          className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6"
         >
           <img
             className="w-full h-48 object-cover rounded-t-lg"
@@ -181,102 +182,4 @@ const All = () => {
   );
 };
 
-export default All;
-
-
-
-// const All = ({ searchQuery }) => {
-//   const { addToCart } = useContext(storeContext);
-//   const [productQuantity, setProductQuantity] = useState({});
-
-//   const handleAddToCart = (product) => {
-//     addToCart(product);
-//     setProductQuantity((prevQuantity) => ({
-//       ...prevQuantity,
-//       [product.id]: (prevQuantity[product.id] || 0) + 1,
-//     }));
-//   };
-
-//   const filteredCars = fetch_cars_data.filter((car) =>
-//     car.model.toLowerCase().includes(searchQuery.toLowerCase())
-//   );
-
-//   const filteredBikes = fetch_bike_data.filter((bike) =>
-//     bike.model.toLowerCase().includes(searchQuery.toLowerCase())
-//   );
-
-//   const filteredScooties = fetch_scooty_data.filter((scooty) =>
-//     scooty.model.toLowerCase().includes(searchQuery.toLowerCase())
-//   );
-
-//   return (
-//     <div className="flex flex-wrap gap-5 p-5">
-//       {filteredCars.map((car) => (
-//         <div key={car.id} className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6 m-6">
-//           <img className="w-full h-48 object-cover rounded-t-lg" src={car.image} alt={car.model} />
-//           <div className="p-5">
-//             <h2 className="text-2xl font-bold mb-2">{car.model}</h2>
-//             <p className="text-gray-700 mb-2">{car.description}</p>
-//             <ul className="mb-2">
-//               <li><span className="font-semibold">Price:</span> {car.price}</li>
-//               <li><span className="font-semibold">Color:</span> {car.color}</li>
-//               <li><span className="font-semibold">Mileage:</span> {car.mileage}</li>
-//               <li><span className="font-semibold">Top Speed:</span> {car.topSpeed}</li>
-//             </ul>
-//             <button
-//               onClick={() => handleAddToCart(car)}
-//               className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-700"
-//             >
-//               Add to Cart {productQuantity[car.id] ? `(${productQuantity[car.id]})` : ''}
-//             </button>
-//           </div>
-//         </div>
-//       ))}
-//       {filteredBikes.map((bike) => (
-//         <div key={bike.id} className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6 m-6">
-//           <img className="w-full h-48 object-cover rounded-t-lg" src={bike.image} alt={bike.model} />
-//           <div className="p-5">
-//             <h2 className="text-2xl font-bold mb-2">{bike.model}</h2>
-//             <p className="text-gray-700 mb-2">{bike.description}</p>
-//             <ul className="mb-2">
-//               <li><span className="font-semibold">Price:</span> {bike.price}</li>
-//               <li><span className="font-semibold">Color:</span> {bike.color}</li>
-//               <li><span className="font-semibold">Mileage:</span> {bike.mileage}</li>
-//               <li><span className="font-semibold">Top Speed:</span> {bike.topSpeed}</li>
-//             </ul>
-//             <button
-//               onClick={() => handleAddToCart(bike)}
-//               className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-700"
-//             >
-//               Add to Cart {productQuantity[bike.id] ? `(${productQuantity[bike.id]})` : ''}
-//             </button>
-//           </div>
-//         </div>
-//       ))}
-//       {filteredScooties.map((scooty) => (
-//         <div key={scooty.id} className="max-w-sm bg-white border-gray-400 border-2 rounded-lg shadow-lg p-6 m-6">
-//           <img className="w-full h-48 object-cover rounded-t-lg" src={scooty.image} alt={scooty.model} />
-//           <div className="p-5">
-//             <h2 className="text-2xl font-bold mb-2">{scooty.model}</h2>
-//             <p className="text-gray-700 mb-2">{scooty.description}</p>
-//             <ul className="mb-2">
-//               <li><span className="font-semibold">Price:</span> {scooty.price}</li>
-//               <li><span className="font-semibold">Color:</span> {scooty.color}</li>
-//               <li><span className="font-semibold">Mileage:</span> {scooty.mileage}</li>
-//               <li><span className="font-semibold">Top Speed:</span> {scooty.topSpeed}</li>
-//             </ul>
-//             <button
-//               onClick={() => handleAddToCart(scooty)}
-//               className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-700"
-//             >
-//               Add to Cart {productQuantity[scooty.id] ? `(${productQuantity[scooty.id]})` : ''}
-//             </button>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default All;
-
+export default All; // Exporting the All component

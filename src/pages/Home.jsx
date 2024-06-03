@@ -1,9 +1,9 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick"; // Import Slider component from react-slick library
+import "slick-carousel/slick/slick.css"; // Import slick carousel styles
+import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme styles
 
-
+// Array containing image sources for the slider
 const imageSources = [
   "https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg",
   "https://images.unsplash.com/photo-1537984822441-cff330075342?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -14,17 +14,19 @@ const imageSources = [
   "https://images.unsplash.com/photo-1530906358829-e84b2769270f?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ];
 
+// Settings for the Slider component
 const sliderSettings = {
-  dots: true,
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  speed: 2000,
-  autoplaySpeed: 2000,
-  cssEase: "linear"
+  dots: true,  // Show navigation dots
+  infinite: true, // Allow infinite loop of slides
+  slidesToShow: 1,  // Number of slides to show at once
+  slidesToScroll: 1, // Number of slides to scroll at a time
+  autoplay: true,  // Enable autoplay
+  speed: 2000,  // Slide transition speed in milliseconds
+  autoplaySpeed: 2000, // Autoplay speed in milliseconds
+  cssEase: "linear" // Transition effect
 };
 
+// Define the Home component
 function Home() {
   
 
@@ -51,4 +53,5 @@ function Home() {
   );
 }
 
+// Export the Home component
 export default Home;
